@@ -11226,24 +11226,27 @@ pre {
 }
 
 .header {
-  height: 100vh; /* Altura del header igual a la altura de la pantalla visible */
-  max-height: 900px; /* Altura máxima del header */
-  background: url(../imgs/main.jpg) no-repeat center center; /* Elimina 'fixed' para mejorar la respuesta móvil */
-  background-size: cover; /* Imagen de fondo cubre el contenedor manteniendo su proporción */
-  min-height: 750px; /* Altura mínima */
+  height: 100vh;
+  max-height: 900px;
+  background: url(../imgs/main.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* Mantiene el efecto parallax */
+  min-height: 750px;
 }
 
+/* Ajustes responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
   .header {
-    background-position: top; /* Ajusta la posición para pantallas pequeñas */
-    height: 70vh; /* Reduce la altura en pantallas pequeñas */
-    min-height: 500px; /* Ajusta la altura mínima en móviles */
+    background-attachment: scroll; /* Para mejorar rendimiento en móviles si el parallax no funciona bien */
+    background-position: top; /* Ajusta la posición de la imagen para pantallas pequeñas */
+    height: 70vh; /* Reduce ligeramente la altura en pantallas móviles */
+    min-height: 500px;
   }
 }
 
 @media (max-width: 576px) {
   .header {
-    height: 60vh; /* Aún más pequeña para dispositivos muy pequeños */
+    height: 60vh; /* Aún más pequeña en móviles pequeños */
     min-height: 400px;
   }
 }
