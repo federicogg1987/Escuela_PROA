@@ -11226,11 +11226,26 @@ pre {
 }
 
 .header {
-  height: 100vh;
-  max-height: 900px;
-  background: url(../imgs/main.jpg) no-repeat center center fixed;
-  background-size: cover;
-  min-height: 750px;
+  height: 100vh; /* Altura del header igual a la altura de la pantalla visible */
+  max-height: 900px; /* Altura máxima del header */
+  background: url(../imgs/main.jpg) no-repeat center center; /* Elimina 'fixed' para mejorar la respuesta móvil */
+  background-size: cover; /* Imagen de fondo cubre el contenedor manteniendo su proporción */
+  min-height: 750px; /* Altura mínima */
+}
+
+@media (max-width: 768px) {
+  .header {
+    background-position: top; /* Ajusta la posición para pantallas pequeñas */
+    height: 70vh; /* Reduce la altura en pantallas pequeñas */
+    min-height: 500px; /* Ajusta la altura mínima en móviles */
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    height: 60vh; /* Aún más pequeña para dispositivos muy pequeños */
+    min-height: 400px;
+  }
 }
 
 .header .overlay {
