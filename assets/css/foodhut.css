@@ -15,9 +15,15 @@
 /*boton whatsapp*/
 
 @media screen and (max-width: 539px) {
-	.boton-whatsapp{
-		display: none}
+	.boton-whatsapp {
+		position: fixed;
+		right: 20px; /* Ajusta la posición del botón más cerca del borde en pantallas pequeñas */
+		bottom: 60px; /* Ajusta la distancia desde la parte inferior */
+		width: 50px; /* Reduce el tamaño del botón para pantallas pequeñas */
+		height: 50px; /* Mantén la proporción del botón */
+		z-index: 100; /* Mantén el botón por encima de otros elementos */
 	}
+}
 
 @media screen and (min-width: 540px) and (max-width: 1499px) {
 	.boton-whatsapp{
